@@ -1,10 +1,14 @@
 import Head from 'next/head';
 import Image from 'next/image';
-
+import { useSelector } from 'react-redux';
 import Navbar from '../components/Navbar';
-import Home from '../components/Home';
+import CounterRed from '../components/CounterRed';
+// import Decrement from '../components/Decrement';
+// import Increment from '../components/Increment';
 
-export default function HomePage() {
+export default function Counter() {
+	const count = useSelector((state) => state.counter.value);
+
 	return (
 		<div>
 			<Head>
@@ -16,7 +20,7 @@ export default function HomePage() {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<Navbar />
-			<Home />
+			<CounterRed />
 			{/* <Increment />
 			<Decrement /> */}
 		</div>
